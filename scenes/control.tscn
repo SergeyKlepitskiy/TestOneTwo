@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://c63nndbon0wy3"]
+
+[ext_resource type="Texture2D" uid="uid://byyd6uie5iau0" path="res://graphics/archer_logo.png" id="1_6cbch"]
+[ext_resource type="Script" path="res://scenes/start.gd" id="1_kqo8x"]
+[ext_resource type="Script" path="res://scenes/Pick.gd" id="2_gjo8c"]
+[ext_resource type="Texture2D" uid="uid://7k5m4hs8f30r" path="res://graphics/war_logo.png" id="4_1cpiu"]
+[ext_resource type="Texture2D" uid="uid://dkpv7lgwut7id" path="res://graphics/wiz_logo.png" id="5_v17e6"]
+
+[node name="start" type="CanvasLayer"]
+script = ExtResource("1_kqo8x")
+
+[node name="Pick" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.843137, 0.843137, 0.843137, 1)
+script = ExtResource("2_gjo8c")
+
+[node name="ArcherPick" type="TextureButton" parent="Pick"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135
+anchor_top = 0.41
+anchor_right = 0.274
+anchor_bottom = 0.596
+offset_left = 0.480011
+offset_top = 0.319946
+offset_right = 640.402
+offset_bottom = 479.792
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_6cbch")
+stretch_mode = 1
+
+[node name="WarrirorPick" type="TextureButton" parent="Pick"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.387
+anchor_top = 0.41
+anchor_right = 0.526
+anchor_bottom = 0.591
+offset_left = 0.175964
+offset_top = -2.68002
+offset_right = 640.098
+offset_bottom = 480.032
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_1cpiu")
+stretch_mode = 1
+
+[node name="WizardPick" type="TextureButton" parent="Pick"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.714
+anchor_top = 0.41
+anchor_right = 0.852
+anchor_bottom = 0.563
+offset_left = -0.528137
+offset_top = -3.68002
+offset_right = 640.546
+offset_bottom = 497.176
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_v17e6")
+stretch_mode = 1
+
+[connection signal="pressed" from="Pick/ArcherPick" to="." method="_on_archer_pick_pressed"]
+[connection signal="pressed" from="Pick/WarrirorPick" to="." method="_on_warriror_pick_pressed"]
+[connection signal="pressed" from="Pick/WizardPick" to="." method="_on_wizard_pick_pressed"]

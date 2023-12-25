@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwufje17clgds"]
+
+[ext_resource type="Texture2D" uid="uid://dgk81qoh7juq4" path="res://graphics/Frame 1.png" id="1_bc6pm"]
+[ext_resource type="Script" path="res://scenes/main_screen.gd" id="1_outal"]
+[ext_resource type="Texture2D" uid="uid://dl1nnmxra5ole" path="res://graphics/healthcare-skull-icon-5.png" id="2_65c7e"]
+[ext_resource type="Texture2D" uid="uid://b40v1gmv6mmsv" path="res://graphics/warrior.png" id="3_gugfx"]
+[ext_resource type="Texture2D" uid="uid://ds1bf4tr2gsbs" path="res://graphics/wizard.png" id="4_bmdvo"]
+
+[sub_resource type="Animation" id="Animation_x7wrt"]
+resource_name = "Attack"
+
+[sub_resource type="Animation" id="Animation_npdc6"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gkjn"]
+_data = {
+"Attack": SubResource("Animation_x7wrt"),
+"RESET": SubResource("Animation_npdc6")
+}
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_outal")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.022
+anchor_right = 0.143
+anchor_bottom = 0.264
+offset_left = 11.504
+offset_top = -0.255999
+offset_right = 553.264
+offset_bottom = 627.928
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_gugfx")
+
+[node name="Slot2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.301
+anchor_right = 0.145
+anchor_bottom = 0.543
+offset_left = 4.504
+offset_top = -0.0480194
+offset_right = 543.96
+offset_bottom = 628.136
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_gugfx")
+
+[node name="Slot3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.573
+anchor_right = 0.14
+anchor_bottom = 0.815
+offset_left = 4.504
+offset_top = -0.304016
+offset_right = 549.72
+offset_bottom = 627.88
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_bmdvo")
+
+[node name="Slot1_e" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.787
+anchor_top = 0.509
+anchor_right = 0.905
+anchor_bottom = 0.752
+offset_left = 0.375793
+offset_top = 0.167999
+offset_right = 544.44
+offset_bottom = 627.704
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_65c7e")
+
+[node name="Slot2_e" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.789
+anchor_top = 0.111
+anchor_right = 0.907
+anchor_bottom = 0.353
+offset_left = 0.0718384
+offset_top = 0.0720215
+offset_right = 544.136
+offset_bottom = 628.256
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_65c7e")
+
+[node name="UI" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bc6pm")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7gkjn")
+}

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blpqc8e6am5dv"]
+
+[ext_resource type="Script" path="res://Squad.gd" id="1_27xbq"]
+[ext_resource type="Script" path="res://cell.gd" id="2_yqapj"]
+
+[node name="Squad" type="Node2D"]
+script = ExtResource("1_27xbq")
+
+[node name="cell" type="Node2D" parent="."]
+script = ExtResource("2_yqapj")
+
+[node name="cell2" type="Node2D" parent="."]
+script = ExtResource("2_yqapj")
+
+[node name="cell3" type="Node2D" parent="."]
+script = ExtResource("2_yqapj")

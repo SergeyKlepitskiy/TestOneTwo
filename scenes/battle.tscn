@@ -1,0 +1,117 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0psgh2tlqctb"]
+
+[ext_resource type="Script" path="res://scenes/battle.gd" id="1_gwkta"]
+[ext_resource type="Texture2D" uid="uid://4aak82y60rte" path="res://graphics/orc.png" id="2_dmyf0"]
+[ext_resource type="Texture2D" uid="uid://cfkth7q0672mi" path="res://graphics/archer.png" id="3_6tjn3"]
+[ext_resource type="Texture2D" uid="uid://dgk81qoh7juq4" path="res://graphics/Frame 1.png" id="4_lscpw"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwkta")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 47.0
+offset_bottom = 46.0
+
+[node name="Slot1" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.375
+anchor_top = 3.2
+anchor_right = 7.08
+anchor_bottom = 8.6
+offset_left = -1.52588e-05
+offset_right = 592.8
+offset_bottom = 864.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_6tjn3")
+
+[node name="Slot3" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.825
+anchor_top = 16.4
+anchor_right = 7.53
+anchor_bottom = 21.8
+offset_left = -3.05176e-05
+offset_top = -6.10352e-05
+offset_right = 592.8
+offset_bottom = 864.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_6tjn3")
+
+[node name="Slot2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.55
+anchor_top = 9.9
+anchor_right = 7.255
+anchor_bottom = 15.3
+offset_left = -1.52588e-05
+offset_top = -9.15527e-05
+offset_right = 592.8
+offset_bottom = 864.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_6tjn3")
+
+[node name="UI" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_lscpw")
+metadata/_edit_lock_ = true
+
+[node name="Enemies" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1374.0
+offset_top = 118.0
+offset_right = 1901.0
+offset_bottom = 905.0
+
+[node name="Slot1" type="TextureRect" parent="Enemies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.915
+anchor_bottom = 0.446
+offset_left = 144.0
+offset_top = 13.0
+offset_right = -58.205
+offset_bottom = -0.00201416
+texture = ExtResource("2_dmyf0")
+expand_mode = 5
+flip_h = true
+
+[node name="Slot2" type="TextureRect" parent="Enemies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.336
+anchor_top = 0.461
+anchor_right = 0.867
+anchor_bottom = 0.891
+offset_left = -0.0720062
+offset_top = 0.192993
+offset_right = 0.0909729
+offset_bottom = -0.217041
+texture = ExtResource("2_dmyf0")
+flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

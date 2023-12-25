@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ursp7xhxin6"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_comjs"]
+[ext_resource type="PackedScene" uid="uid://dwufje17clgds" path="res://scenes/main_screen.tscn" id="3_u2um2"]
+[ext_resource type="PackedScene" uid="uid://c63nndbon0wy3" path="res://scenes/control.tscn" id="4_f1w25"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_comjs")
+
+[node name="start" parent="." instance=ExtResource("4_f1w25")]
+
+[node name="MainScreen" parent="." instance=ExtResource("3_u2um2")]
+clip_contents = true
+layout_direction = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -8.0
+offset_top = 3.0
+offset_right = 1153.0
+offset_bottom = 660.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="battle_go" from="start" to="." method="_on_start_battle_go"]
